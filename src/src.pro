@@ -14,4 +14,14 @@ CONFIG += c++11
 
 include ($${PWD}/ssh.pri)
 
+unix:headersDataFiles.path = /usr/include/qssh
+unix:headersDataFiles.files = $${HEADERS}
+INSTALLS += headersDataFiles
+ 
+unix:libraryFiles.path = /usr/lib
+unix:libraryFiles.files = $${QSSH_ROOT}/lib/*.so*
+INSTALLS += libraryFiles
+
+
+
 
