@@ -21,9 +21,11 @@ unix:headersDataFiles.path = /usr/include/qssh
 unix:headersDataFiles.files = $${HEADERS}
 INSTALLS += headersDataFiles
  
-unix:libraryFiles.path = /usr/lib
-unix:libraryFiles.files = $${QSSH_ROOT}/lib/*.so*
-INSTALLS += libraryFiles
+#unix:libraryFiles.path = /usr/lib
+#unix:libraryFiles.files = $${QSSH_ROOT}/lib/*.so*
+#INSTALLS += libraryFiles
+target.path = /usr/lib
+INSTALLS += target
 
 
 
