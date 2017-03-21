@@ -66,11 +66,11 @@ HEADERS = $$files($$PWD/*.h)
 SOURCES -= $$PWD/sftpfilesystemmodel.cpp \ 
            $$PWD/sshkeycreationdialog.cpp \
            $$PWD/sshkeygenerator.cpp \
-           $$PWD/sshkeypasswordretriever.cpp
+#           $$PWD/sshkeypasswordretriever.cpp
 
 HEADERS -= $$PWD/sftpfilesystemmodel.h \
            $$PWD/sshkeycreationdialog.h \
            $$PWD/sshkeygenerator.h \
-           $$PWD/sshkeypasswordretriever.h
+#           $$PWD/sshkeypasswordretriever.h
 
 include($$PWD/3rdparty/botan/botan.pri)
