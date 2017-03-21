@@ -1,4 +1,4 @@
-SOURCES = $$PWD/*.cpp
+SOURCES = $$files($$PWD/*.cpp)
 # $$PWD/sshsendfacility.cpp \
 #   $$PWD/sshremoteprocess.cpp \
 #     $$PWD/sshpacketparser.cpp \
@@ -22,11 +22,10 @@ SOURCES = $$PWD/*.cpp
 #     $$PWD/sshconnectionmanager.cpp \
 #     $$PWD/sshkeypasswordretriever.cpp \
 #     $$PWD/sftpfilesystemmodel.cpp \
-#     $$PWD/sshkeycreationdialog.cpp \
 #     $$PWD/sshinit.cpp \
 #     $$PWD/sshdirecttcpiptunnel.cpp
 
-HEADERS = $$PWD/*.h
+HEADERS = $$files($$PWD/*.h)
 # $$PWD/sshsendfacility_p.h \
 #     $$PWD/sshremoteprocess.h \
 #     $$PWD/sshremoteprocess_p.h \
@@ -57,12 +56,21 @@ HEADERS = $$PWD/*.h
 #     $$PWD/sshpseudoterminal.h \
 #     $$PWD/sshkeypasswordretriever_p.h \
 #     $$PWD/sftpfilesystemmodel.h \
-#     $$PWD/sshkeycreationdialog.h \
 #     $$PWD/ssh_global.h \
 #     $$PWD/sshdirecttcpiptunnel_p.h \
 #     $$PWD/sshinit_p.h \
 #     $$PWD/sshdirecttcpiptunnel.h
 
-FORMS = $$PWD/sshkeycreationdialog.ui
+#FORMS = $$PWD/sshkeycreationdialog.ui
+# exlude source which depend on gui
+SOURCES -= $$PWD/sftpfilesystemmodel.cpp \ 
+           $$PWD/sshkeycreationdialog.cpp \
+           $$PWD/sshkeygenerator.cpp \
+           $$PWD/sshkeypasswordretriever.cpp
+
+HEADERS -= $$PWD/sftpfilesystemmodel.h \
+           $$PWD/sshkeycreationdialog.h \
+           $$PWD/sshkeygenerator.h \
+           $$PWD/sshkeypasswordretriever.h
 
 include($$PWD/3rdparty/botan/botan.pri)
